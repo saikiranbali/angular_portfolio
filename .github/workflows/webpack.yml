@@ -27,9 +27,11 @@ jobs:
 
     - name: Build
       run: |
-        npm update
-        ng version
         rm -rf node_modules
+        npm update
+        npm install
+        ng update @angular/core
+        ng version
         npm install @angular/compiler@11.2.14
         npm install @ng-bootstrap/ng-bootstrap@^9.1.3
         npm install --save-dev @angular/cli
