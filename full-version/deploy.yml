@@ -1,3 +1,4 @@
+
 name: Deploy to Hostinger
 
 on:
@@ -17,10 +18,9 @@ jobs:
         run: |
           npm install
           npm run build
-          # Upload the contents of the 'dist' directory to Hostinger using FTP or other methods
-          # You can use tools like lftp or FTP action for this purpose
-          # Example using lftp:
-          lftp -u ${{ secrets.HOSTINGER_FTP_USER }} -p ${{ secrets.HOSTINGER_FTP_PASSWORD }} sftp://yourdomain.com -e "mirror -R ./dist /public_html" -d
+          # Upload the contents of the 'dist' directory to Hostinger using FTP
+          # Use the GitHub secrets for FTP_SERVER and FTP_USER
+          lftp -u ${{ secrets.FTP_USER }} -e "open ${{ secrets.FTP_SERVER }}; mirror -R ./dist /public_html/profile" -p 21 -d
 
     env:
       NODE_ENV: production
