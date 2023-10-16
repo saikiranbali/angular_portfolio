@@ -22,9 +22,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+
     - name: Build
       run: |
         npm update
+        ng version
         rm -rf node_modules
         npm install @angular/compiler@11.2.14
         npm install @ng-bootstrap/ng-bootstrap@^9.1.3
