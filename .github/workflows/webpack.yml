@@ -24,5 +24,7 @@ jobs:
 
     - name: Build
       run: |
+        npm update
+        npm install @angular/compiler@11.2.14
         npm install
         npx webpack
