@@ -32,7 +32,6 @@ jobs:
 
     - name: Build
       run: |
-        ng update @angular/core
         npm install --legacy-peer-deps
         ng version
         npx webpack
