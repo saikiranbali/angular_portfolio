@@ -32,3 +32,4 @@ jobs:
         npx webpack
         echo "yes" | npm install -D webpack-cli
         npm audit fix
+        ng build --prod
