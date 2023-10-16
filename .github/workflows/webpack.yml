@@ -32,6 +32,8 @@ jobs:
         npx webpack
         echo "yes" | npm install -D webpack-cli
         npm audit fix
+        ng build --prod
+
 
     - name: Deploy to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
